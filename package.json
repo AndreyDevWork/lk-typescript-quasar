@@ -1,0 +1,39 @@
+{
+  "name": "lk-typescript-quasar",
+  "version": "0.0.1",
+  "description": "lk-typescript-quasar",
+  "productName": "lk-typescript-quasar",
+  "author": "Andrey <andrey.develop.a@gmail.com>",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build"
+  },
+  "dependencies": {
+    "pinia": "^2.0.11",
+    "@quasar/extras": "^1.16.4",
+    "quasar": "^2.6.0",
+    "vue": "3.4.15",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.11.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "@types/node": "^20.5.9",
+    "@quasar/app-vite": "^2.0.0-beta.1",
+    "autoprefixer": "^10.4.2",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": "^24 || ^22 || ^20 || ^18",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
