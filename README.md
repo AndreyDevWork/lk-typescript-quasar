@@ -1,4 +1,4 @@
-# Quasar App (lk-typescript-quasar)
+# lk-typescript-quasar
 
 A Quasar Project
 
