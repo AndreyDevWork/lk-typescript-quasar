@@ -6,7 +6,7 @@
 /* eslint func-names: 0 */
 /* eslint global-require: 0 */
 
-import { configure } from 'quasar/wrappers';
+import { configure } from 'quasar/wrappers'
 
 export default configure((/* ctx */) => ({
   eslint: {
@@ -25,14 +25,10 @@ export default configure((/* ctx */) => ({
   // app boot file (/src/boot)
   // --> boot files are part of "main.js"
   // https://v2.quasar.dev/quasar-cli-vite/boot-files
-  boot: [
-
-  ],
+  boot: [],
 
   // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
-  css: [
-    'app.scss',
-  ],
+  css: ['app.scss'],
 
   // https://github.com/quasarframework/quasar/tree/dev/extras
   extras: [
@@ -186,13 +182,11 @@ export default configure((/* ctx */) => ({
 
     packager: {
       // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
-
       // OS X / Mac App Store
       // appBundleId: '',
       // appCategoryType: '',
       // osxSign: '',
       // protocol: 'myapp://path',
-
       // Windows only
       // win32metadata: { ... }
     },
@@ -209,8 +203,6 @@ export default configure((/* ctx */) => ({
     // extendBexScriptsConf (esbuildConf) {},
     // extendBexManifestJson (json) {},
 
-    contentScripts: [
-      'my-content-script',
-    ],
+    contentScripts: ['my-content-script'],
   },
-}));
+}))
