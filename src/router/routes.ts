@@ -4,7 +4,19 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [
+      {
+        name: 'login',
+        path: '',
+        component: () => import('pages/IndexPage.vue'),
+      },
+      {
+        name: 'converter',
+        path: '/converter',
+        component: () => import('pages/ConverterPage.vue'),
+        meta: { requiresAuth: true },
+      },
+    ],
   },
 
   // Always leave this as last one,

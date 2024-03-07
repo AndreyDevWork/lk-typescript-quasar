@@ -24,7 +24,19 @@
       <div class="title">Вход</div>
       <q-input v-model="loginForm.username" label="username" />
       <q-input v-model="loginForm.password" label="password" />
-      <q-btn @click="login" class="q-mt-md btn" color="primary" label="Войти" />
+      <q-btn
+        v-if="!isSuccessLogin"
+        @click="login"
+        class="q-mt-md btn"
+        color="primary"
+        label="Войти"
+      />
+      <q-btn v-if="errorMessageLogin" class="q-mt-sm btn" color="negative">
+        {{ errorMessageLogin }}
+      </q-btn>
+      <q-btn v-if="isSuccessLogin" class="q-mt-sm btn" color="positive">
+        Аутентификация прошла успешно
+      </q-btn>
     </div>
   </div>
 </template>
@@ -32,6 +44,9 @@
 <script setup lang="js">
 import { reactive, ref } from 'vue'
 import { httpClient } from 'src/services/httpClient'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const signupForm = reactive({
   username: '',
@@ -39,6 +54,9 @@ const signupForm = reactive({
 })
 
 const loginForm = reactive({
+  grant_type: 'password',
+  client_id: import.meta.env.VITE_AUTH_CLIENT_ID,
+  client_secret: import.meta.env.VITE_AUTH_CLIENT_SECRET,
   username: '',
   password: '',
 })
@@ -51,15 +69,28 @@ const signup = () => {
     .post('/api/auth/register', signupForm)
     .then(() => {
       isSuccess.value = true
-      errorMessage.value = false
+      errorMessage.value = ''
     })
     .catch((error) => {
       errorMessage.value = error.response.data.message
     })
 }
 
+const isSuccessLogin = ref(false)
+const errorMessageLogin = ref('')
 const login = () => {
-  console.log('войти')
+  httpClient
+    .post('oauth/token', loginForm)
+    .then((response) => {
+      isSuccessLogin.value = true
+      errorMessageLogin.value = ''
+      localStorage.setItem('ACCESS_TOKEN', response.data.access_token)
+      router.push({ path: '/converter' })
+    })
+    .catch((error) => {
+      console.log(error)
+      errorMessageLogin.value = error.response.data.message
+    })
 }
 </script>
 
