@@ -1,12 +1,11 @@
 <template>
   <div class="q-pa-md">
     <q-table
-      v-if="currencyies.length"
       title="Currencyies"
       :rows="props.currencyies"
       :columns="columns"
       row-key="name"
-      rows-per-page-options="0"
+      :rows-per-page-options="[0]"
     />
   </div>
 </template>

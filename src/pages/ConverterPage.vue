@@ -1,6 +1,6 @@
 <template>
   <div class="q-mx-auto q-pt-md wrapper">
-    <CurrenciesTable :currencyies="currencyies" />
+    <CurrenciesTable v-if="currencyies.length" :currencyies="currencyies" />
   </div>
 </template>
 
