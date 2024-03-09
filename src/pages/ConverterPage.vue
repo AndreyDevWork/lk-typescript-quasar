@@ -1,11 +1,13 @@
 <template>
-  <div class="q-mx-auto q-pt-md wrapper">
-    <CurrenciesTable v-if="currencyies.length" :currencyies="currencyies" />
+  <div v-if="currencyies.length" class="q-mx-auto q-pt-md wrapper">
+    <ConverterCalc />
+    <CurrenciesTable :currencyies="currencyies" />
   </div>
 </template>
 
 <script setup>
 import CurrenciesTable from 'components/CurrenciesTable.vue'
+import ConverterCalc from 'components/ConverterCalc.vue'
 import { ref } from 'vue'
 import { httpClient } from 'src/services/httpClient.js'
 import { useRouter } from 'vue-router'
