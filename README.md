@@ -1,35 +1,38 @@
-# lk-typescript-quasar
+<h1 align="center">Converter Frontend</h1>
 
-A Quasar Project
+## Development Setup
 
-## Install the dependencies
+### Prerequisites
 
-```bash
-yarn
-# or
-npm install
-```
+- Install [Node.js](https://nodejs.org/en)
+- Install [npm](https://www.npmjs.com/) by following the installation [instructions](https://docs.npmjs.com/)
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Setting Up a Project
 
-```bash
-quasar dev
-```
+1. Clone this repository
 
-### Lint the files
+    ```bash
+    git clone git@github.com:AndreyDevWork/lk-typescript-quasar.git
+    ```
 
-```bash
-yarn lint
-# or
-npm run lint
-```
+2. Install the dependencies
+    ```bash
+    npm install
+    ```
 
-### Build the app for production
+3. copy .env.example to .env
 
-```bash
-quasar build
-```
 
-### Customize the configuration
+4. Скопируйте Client ID и Client secret от Password grant client в .env
 
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+
+5. Start the app
+    ```bash
+    quasar dev
+    ```
+
+- The application is available at http://172.30.32.1:9000/
+
+#### Project Description: Converter
+
+The Converter Frontend application serves as the frontend infrastructure for the Converter REST API backend. This frontend application is designed to interact with the backend part of the Converter system, providing users with a user-friendly interface to access and utilize the functionality offered by the REST API. Through the frontend, users can seamlessly interact with the Converter system, making requests and receiving responses from the backend, ultimately facilitating a smooth and intuitive user experience.
