@@ -1,6 +1,6 @@
 <template>
   <div v-if="currencyies.length" class="q-mx-auto q-pt-md wrapper">
-    <ConverterCalc />
+    <ConverterCalc :currencyies="currencyies" />
     <CurrenciesTable :currencyies="currencyies" />
   </div>
 </template>

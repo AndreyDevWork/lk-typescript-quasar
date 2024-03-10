@@ -1,8 +1,8 @@
 {
-  "name": "lk-typescript-quasar",
+  "name": "Converter",
   "version": "0.0.1",
-  "description": "lk-typescript-quasar",
-  "productName": "lk-typescript-quasar",
+  "description": "Converter",
+  "productName": "Converter",
   "author": "Andrey <andrey.develop.a@gmail.com>",
   "type": "module",
   "private": true,
